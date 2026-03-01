@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, Home } from "lucide-react";
 
 const navLinks = [
+  { label: "Home", href: "/", icon: Home },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Reviews", href: "#reviews" },
@@ -24,79 +25,84 @@ const Navbar = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? "bg-background/80 backdrop-blur-xl shadow-lg shadow-primary/5 border-b border-border/50"
+            ? "bg-white/70 backdrop-blur-2xl shadow-[0_2px_15px_rgba(0,0,0,0.06)] border-b border-gray-100/50"
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between px-4 py-3">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gold to-teal flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm font-serif">L</span>
+          <a href="/" className="flex items-center gap-2.5 group cursor-pointer">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:shadow-blue-600/30 transition-all">
+              <span className="text-white font-bold text-sm font-serif">L</span>
             </div>
             <div>
-              <span className={`text-lg font-bold font-serif transition-colors duration-300 ${
-                scrolled ? "text-primary" : "text-primary-foreground"
-              }`}>
-                Lad Family Dentistry
+              <span className={`text-base font-semibold transition-colors duration-300 ${
+                scrolled ? "text-gray-900" : "text-primary-foreground"
+              } block`}>
+                Lad Dentistry
               </span>
-              <span className={`hidden sm:block text-xs transition-colors duration-300 ${
-                scrolled ? "text-teal" : "text-gold"
+              <span className={`text-xs transition-colors duration-300 block ${
+                scrolled ? "text-gray-600" : "text-blue-100"
               }`}>
-                Temple City's Most Trusted Smile
+                Temple City
               </span>
             </div>
-          </div>
+          </a>
 
-          {/* Desktop nav — Apple pill style */}
-          <nav className="hidden md:flex items-center">
-            <div className={`flex items-center gap-1 px-2 py-1.5 rounded-full transition-all duration-300 ${
+          {/* Desktop nav — Premium Apple style */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <div className={`flex items-center gap-0.5 px-1 py-1 rounded-2xl transition-all duration-300 ${
               scrolled 
-                ? "bg-secondary/80 backdrop-blur-sm" 
-                : "bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/10"
+                ? "bg-gray-100/50" 
+                : "bg-white/10 backdrop-blur-md"
             }`}>
-              {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 hover:scale-[1.02] ${
-                    scrolled
-                      ? "text-foreground hover:bg-background hover:shadow-sm"
-                      : "text-primary-foreground/90 hover:bg-primary-foreground/15 hover:text-primary-foreground"
-                  }`}
-                >
-                  {l.label}
-                </a>
-              ))}
+              {navLinks.map((l) => {
+                const Icon = l.icon;
+                return (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    className={`flex items-center gap-2 text-sm font-medium px-3.5 py-2 rounded-xl transition-all duration-200 hover:bg-white/20 active:scale-95 ${
+                      scrolled
+                        ? "text-gray-700 hover:bg-gray-200/50"
+                        : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {Icon && <Icon className="w-4 h-4" />}
+                    {l.label}
+                  </a>
+                );
+              })}
             </div>
 
             <a
               href="tel:+16262874094"
-              className="ml-4 inline-flex items-center gap-2 bg-gold text-gold-foreground font-bold px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-gold/20 hover:scale-[1.02] active:scale-95 transition-all duration-200"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-600/30 hover:scale-[1.02] active:scale-95 transition-all duration-200"
             >
               <Phone className="w-4 h-4" />
-              (626) 287-4094
+              <span className="hidden sm:inline">(626) 287-4094</span>
+              <span className="sm:hidden">Call</span>
             </a>
           </nav>
 
           {/* Mobile hamburger */}
           <button
-            className={`md:hidden p-2.5 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center transition-all ${
+            className={`lg:hidden p-2.5 min-w-[44px] min-h-[44px] rounded-xl flex items-center justify-center transition-all ${
               scrolled
-                ? "bg-secondary text-primary"
-                : "bg-primary-foreground/10 backdrop-blur-md text-primary-foreground"
+                ? "bg-gray-100 text-gray-900"
+                : "bg-white/10 backdrop-blur-md text-white"
             }`}
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-6 h-6" />
           </button>
         </div>
       </header>
 
       {/* Mobile drawer overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-50 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setDrawerOpen(false)}
@@ -104,37 +110,49 @@ const Navbar = () => {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-4/5 max-w-sm bg-background/95 backdrop-blur-xl shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 right-0 z-50 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-5">
-          <span className="font-serif font-bold text-primary text-lg">Menu</span>
+        {/* Drawer Header */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+          <span className="font-semibold text-gray-900 text-lg">Menu</span>
           <button
             onClick={() => setDrawerOpen(false)}
-            className="p-2.5 min-w-[44px] min-h-[44px] rounded-full bg-secondary flex items-center justify-center"
+            className="p-2.5 min-w-[44px] min-h-[44px] rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all"
             aria-label="Close menu"
           >
-            <X className="w-5 h-5 text-foreground" />
+            <X className="w-5 h-5 text-gray-900" />
           </button>
         </div>
-        <nav className="flex flex-col px-4 gap-1">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setDrawerOpen(false)}
-              className="text-lg font-medium text-foreground py-3.5 px-5 rounded-2xl hover:bg-secondary active:scale-[0.98] transition-all"
-            >
-              {l.label}
-            </a>
-          ))}
+
+        {/* Drawer Navigation */}
+        <nav className="flex flex-col px-4 gap-1 py-4">
+          {navLinks.map((l) => {
+            const Icon = l.icon;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setDrawerOpen(false)}
+                className="flex items-center gap-3 text-gray-900 font-medium py-3.5 px-4 rounded-xl hover:bg-gray-100 active:scale-95 transition-all"
+              >
+                {Icon && <Icon className="w-5 h-5 text-blue-600" />}
+                {l.label}
+              </a>
+            );
+          })}
+
+          {/* Divider */}
+          <div className="my-4 border-t border-gray-100" />
+
+          {/* CTA Button */}
           <a
             href="tel:+16262874094"
-            className="mt-6 flex items-center justify-center gap-2.5 bg-gold text-gold-foreground font-bold py-4 rounded-2xl text-lg active:scale-95 transition-all"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3.5 rounded-xl hover:shadow-lg hover:shadow-blue-600/30 active:scale-95 transition-all"
           >
             <Phone className="w-5 h-5" />
-            (626) 287-4094
+            <span>(626) 287-4094</span>
           </a>
         </nav>
       </div>
