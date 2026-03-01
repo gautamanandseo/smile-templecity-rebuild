@@ -22,18 +22,18 @@ const DoctorCard = ({
   name,
   title,
   facts,
-  imageClass,
+  imageSrc,
 }: {
   name: string;
   title: string;
   facts: string[];
-  imageClass: string;
+  imageSrc: string;
 }) => (
-  <div className="bg-background rounded-xl shadow-md p-6 md:p-8 flex-1">
+  <div className="bg-background rounded-xl shadow-md p-6 md:p-8 flex-1 hover:shadow-xl transition-shadow duration-300">
     <div className="flex flex-col items-center mb-6">
-      <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg ${imageClass}`}>
+      <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg ring-4 ring-gold/20">
         <img
-          src="/images/doctors.jpg"
+          src={imageSrc}
           alt={name}
           className="w-full h-full object-cover"
         />
@@ -63,13 +63,13 @@ const AboutDoctors = () => (
           name="Dr. Chiman Lad, DDS"
           title="Founder & Lead Dentist"
           facts={chimanFacts}
-          imageClass=""
+          imageSrc="https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=400"
         />
         <DoctorCard
           name="Dr. Sunjay Lad, DDS"
           title="General & Cosmetic Dentist"
           facts={sunjayFacts}
-          imageClass=""
+          imageSrc="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400"
         />
       </div>
       <div className="bg-slate-bg rounded-xl p-6 md:p-8 text-center">
