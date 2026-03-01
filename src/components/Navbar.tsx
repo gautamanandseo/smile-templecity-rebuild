@@ -32,9 +32,12 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 group cursor-pointer">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:shadow-blue-600/30 transition-all">
-              <span className="text-white font-bold text-sm font-serif">L</span>
-            </div>
+            {/* replace `/logo.png` with your actual logo image file from the original site */}
+            <img
+              src="/logo.png?v=2"
+              alt="Lad Family Dentistry logo"
+              className="w-8 h-8 object-contain rounded-lg"
+            />
             <div>
               <span className={`text-base font-semibold transition-colors duration-300 ${
                 scrolled ? "text-gray-900" : "text-primary-foreground"

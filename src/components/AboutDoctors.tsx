@@ -64,13 +64,13 @@ const AboutDoctors = () => (
             name: "Dr. Chiman Lad, DDS",
             title: "Founder & Lead Dentist",
             facts: chimanFacts,
-            imageSrc: "https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=400",
+            imageSrc: "/images/doctor-chiman.jpg",
           },
           {
             name: "Dr. Sunjay Lad, DDS",
             title: "General & Cosmetic Dentist",
             facts: sunjayFacts,
-            imageSrc: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=400",
+            imageSrc: "/images/doctor-sunjay.jpg",
           },
         ].map((doc, idx) => (
           <div
