@@ -62,17 +62,18 @@ const HoursLocation = () => (
             5813 Temple City Blvd, Temple City, CA 91780
           </p>
 
-          {/* Styled map placeholder */}
-          <div className="bg-primary rounded-xl h-48 md:h-64 flex items-center justify-center relative mb-4 overflow-hidden">
-            <div className="text-center">
-              <MapPin className="w-10 h-10 text-destructive mx-auto mb-2" />
-              <p className="text-primary-foreground font-serif text-lg">Temple City, CA</p>
-            </div>
-            {/* Grid overlay */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: "linear-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary-foreground)) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }} />
+          {/* Google Maps Embed */}
+          <div className="rounded-xl h-48 md:h-64 mb-4 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.8!2d-118.058!3d34.107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2db45b4f6c0a1%3A0x8b0e8b0e8b0e8b0e!2s5813%20Temple%20City%20Blvd%2C%20Temple%20City%2C%20CA%2091780!5e0!3m2!1sen!2sus!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lad Family Dentistry Location"
+            />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">

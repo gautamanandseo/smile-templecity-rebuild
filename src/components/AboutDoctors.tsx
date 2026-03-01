@@ -19,24 +19,24 @@ const sunjayFacts = [
 ];
 
 const DoctorCard = ({
-  initials,
   name,
   title,
   facts,
-  gradient,
+  imageClass,
 }: {
-  initials: string;
   name: string;
   title: string;
   facts: string[];
-  gradient: string;
+  imageClass: string;
 }) => (
   <div className="bg-background rounded-xl shadow-md p-6 md:p-8 flex-1">
     <div className="flex flex-col items-center mb-6">
-      <div
-        className={`w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold text-primary-foreground ${gradient}`}
-      >
-        {initials}
+      <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg ${imageClass}`}>
+        <img
+          src="/images/doctors.jpg"
+          alt={name}
+          className="w-full h-full object-cover"
+        />
       </div>
       <h3 className="mt-4 text-xl font-bold font-serif text-primary">{name}</h3>
       <p className="text-teal font-medium">{title}</p>
@@ -60,18 +60,16 @@ const AboutDoctors = () => (
       </h2>
       <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-10">
         <DoctorCard
-          initials="CL"
           name="Dr. Chiman Lad, DDS"
           title="Founder & Lead Dentist"
           facts={chimanFacts}
-          gradient="bg-gradient-to-br from-primary to-navy-light"
+          imageClass=""
         />
         <DoctorCard
-          initials="SL"
           name="Dr. Sunjay Lad, DDS"
           title="General & Cosmetic Dentist"
           facts={sunjayFacts}
-          gradient="bg-gradient-to-br from-teal to-primary"
+          imageClass=""
         />
       </div>
       <div className="bg-slate-bg rounded-xl p-6 md:p-8 text-center">
