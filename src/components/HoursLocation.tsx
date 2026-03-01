@@ -11,15 +11,17 @@ const hours = [
 ];
 
 const HoursLocation = () => (
-  <section className="bg-background py-16 md:py-24">
-    <div className="container mx-auto px-4">
+  <section className="bg-background py-16 md:py-24 relative overflow-hidden">
+    {/* soft gradient blob */}
+    <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-br from-blue-500 to-indigo-700 opacity-10 rounded-full animate-blob" />
+    <div className="container mx-auto px-4 relative z-10">
       <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary text-center mb-12">
         Visit Our Temple City Office
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Hours */}
-        <div>
+        <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <div className="flex items-center gap-2 mb-4">
             <Clock className="w-6 h-6 text-teal" />
             <h3 className="text-xl font-bold text-primary">Office Hours</h3>
@@ -53,7 +55,7 @@ const HoursLocation = () => (
         </div>
 
         {/* Location */}
-        <div>
+        <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <div className="flex items-center gap-2 mb-4">
             <MapPin className="w-6 h-6 text-teal" />
             <h3 className="text-xl font-bold text-primary">Location</h3>

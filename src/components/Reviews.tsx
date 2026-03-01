@@ -24,8 +24,11 @@ const reviews = [
 ];
 
 const Reviews = () => (
-  <section id="reviews" className="bg-primary py-16 md:py-24">
-    <div className="container mx-auto px-4">
+  <section id="reviews" className="bg-primary py-16 md:py-24 relative overflow-hidden">
+    {/* decorative swirl */}
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-gold to-teal opacity-10 rounded-full animate-blob" />
+
+    <div className="container mx-auto px-4 relative z-10">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary-foreground mb-4">
           What Temple City Patients Say
@@ -37,7 +40,11 @@ const Reviews = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {reviews.map((r, i) => (
-          <div key={i} className="bg-navy-light rounded-xl p-6">
+          <div
+            key={i}
+            className="bg-navy-light rounded-xl p-6 animate-fade-in"
+            style={{ animationDelay: `${i * 0.15}s` }}
+          >
             <div className="flex gap-1 mb-3">
               {[...Array(5)].map((_, j) => (
                 <Star key={j} className="w-5 h-5 fill-gold text-gold" />

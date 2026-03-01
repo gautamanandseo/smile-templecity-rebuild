@@ -67,6 +67,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[90vh] md:min-h-screen pt-20 md:pt-0 overflow-hidden">
+      {/* decorative blobs */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-500 to-indigo-700 opacity-20 rounded-full animate-blob" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-gold to-teal opacity-15 rounded-full animate-blob animation-delay-2000" />
       {/* Background images — all preloaded, only active one visible */}
       {slides.map((s, i) => (
         <div

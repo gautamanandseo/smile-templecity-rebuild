@@ -27,7 +27,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Left — contact info */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center animate-fade-in" style={{ animationDelay: "0.1s" }}>
             <a href="tel:+16262874094" className="text-gold text-3xl md:text-4xl font-bold font-serif mb-4 hover:underline">
               (626) 287-4094
             </a>
@@ -58,7 +58,7 @@ const ContactForm = () => {
           </div>
 
           {/* Right — form */}
-          <div className="bg-background rounded-xl shadow-lg p-6 md:p-8">
+          <div className="bg-background rounded-xl shadow-lg p-6 md:p-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             {submitted ? (
               <div className="text-center py-12 animate-fade-in">
                 <div className="text-4xl mb-4">✅</div>

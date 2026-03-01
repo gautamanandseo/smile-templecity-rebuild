@@ -10,14 +10,17 @@ const paymentPoints = [
 ];
 
 const InsurancePayment = () => (
-  <section id="insurance" className="bg-slate-bg py-16 md:py-24">
+  <section id="insurance" className="bg-slate-bg py-16 md:py-24 relative overflow-hidden">
+    {/* decorative accent */}
+    <div className="absolute top-0 right-0 w-60 h-60 bg-gradient-to-br from-gold to-teal opacity-10 rounded-full animate-blob" />
+
     <div className="container mx-auto px-4">
       <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary text-center mb-12">
         We Make Great Dental Care Affordable
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-        <div className="bg-background rounded-xl shadow-md p-6 md:p-8">
+        <div className="bg-background rounded-xl shadow-md p-6 md:p-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <Shield className="w-10 h-10 text-teal mb-4" />
           <h3 className="text-xl font-bold text-primary mb-3">Most PPO Insurance Accepted</h3>
           <p className="text-muted-foreground mb-4">
@@ -33,7 +36,7 @@ const InsurancePayment = () => (
           </div>
         </div>
 
-        <div className="bg-background rounded-xl shadow-md p-6 md:p-8">
+        <div className="bg-background rounded-xl shadow-md p-6 md:p-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <CreditCard className="w-10 h-10 text-teal mb-4" />
           <h3 className="text-xl font-bold text-primary mb-3">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-4">
@@ -50,7 +53,7 @@ const InsurancePayment = () => (
         </div>
       </div>
 
-      <div className="bg-primary rounded-xl p-6 md:p-8 text-center">
+      <div className="bg-primary rounded-xl p-6 md:p-8 text-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
         <p className="text-primary-foreground text-lg mb-3">
           Questions about insurance? Call us — we'll figure it out together.
         </p>
