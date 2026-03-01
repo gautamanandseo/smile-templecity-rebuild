@@ -70,3 +70,12 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
