@@ -58,19 +58,23 @@ const AboutDoctors = () => (
       <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary text-center mb-12">
         Meet Your Temple City Dentists
       </h2>
+      {/* Team Photo */}
+      <div className="mb-10 rounded-xl overflow-hidden shadow-xl max-w-2xl mx-auto">
+        <img src="./images/doctors.jpg" alt="Dr. Chiman Lad and Dr. Sunjay Lad" className="w-full h-auto object-cover" />
+      </div>
       <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-10">
         {[
           {
             name: "Dr. Chiman Lad, DDS",
             title: "Founder & Lead Dentist",
             facts: chimanFacts,
-            imageSrc: "/images/doctor-chiman.jpg",
+            imageSrc: "./images/doctors.jpg",
           },
           {
             name: "Dr. Sunjay Lad, DDS",
             title: "General & Cosmetic Dentist",
             facts: sunjayFacts,
-            imageSrc: "/images/doctor-sunjay.jpg",
+            imageSrc: "./images/doctors.jpg",
           },
         ].map((doc, idx) => (
           <div
