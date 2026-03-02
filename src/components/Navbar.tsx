@@ -7,6 +7,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Reviews", href: "#reviews" },
   { label: "Insurance", href: "#insurance" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,9 +35,9 @@ const Navbar = () => {
           <a href="/" className="flex items-center gap-2.5 group cursor-pointer">
             {/* replace `/logo.png` with your actual logo image file from the original site */}
             <img
-              src="/logo.png?v=2"
+              src="./images/logo.png"
               alt="Lad Family Dentistry logo"
-              className="w-8 h-8 object-contain rounded-lg"
+              className="h-10 w-auto object-contain"
             />
             <div>
               <span className={`text-base font-semibold transition-colors duration-300 ${
