@@ -95,7 +95,8 @@ export const servicesData: ServiceData[] = [
       },
       {
         title: "Personalized Plan",
-        description: "We provide customized recommendations for optimal health and schedule preventive treatments at appropriate intervals"
+        description: "We provide customized recommendations for optimal health and schedule preventive treatments at appropriate intervals",
+        icon: ClipboardCheck
       }
     ],
     faqs: [
